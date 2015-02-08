@@ -72,30 +72,6 @@
   </nav>
 {% endif %}
 
-{% if settings.sidebar_type_enable and shop.types.size > 0 %}
-  <nav class="sidebar-module">
-    <div class="section-header">
-      <p class="section-header__title h4">{{ 'layout.sidebar.shop_by_type' | t }}</p>
-    </div>
-    <ul class="sidebar-module__list">
-      {% for type in shop.types %}
-        <li {% if forloop.index > 8 %} class="sidebar-module__hidden-item"{% endif %}>{{ type | link_to_type }}</li>
-
-        {% if forloop.index > 8 %}
-          {% assign viewmoreTypes = true %}
-        {% endif %}
-      {% endfor %}
-    </ul>
-
-    {% if viewmoreTypes %}
-      <button class="text-link sidebar-module__viewmore">
-        <span class="sidebar-module__expand">{{ 'layout.sidebar.view_more' | t }}</span>
-        <span class="sidebar-module__collapse">{{ 'layout.sidebar.view_less' | t }}</span>
-      </button>
-    {% endif %}
-  </nav>
-{% endif %}
-
 {% if settings.sidebar_vendor_enable and shop.vendors.size > 0 %}
   <nav class="sidebar-module">
     <div class="section-header">
@@ -112,6 +88,30 @@
     </ul>
 
     {% if viewmoreVendors %}
+      <button class="text-link sidebar-module__viewmore">
+        <span class="sidebar-module__expand">{{ 'layout.sidebar.view_more' | t }}</span>
+        <span class="sidebar-module__collapse">{{ 'layout.sidebar.view_less' | t }}</span>
+      </button>
+    {% endif %}
+  </nav>
+{% endif %}
+
+{% if settings.sidebar_type_enable and shop.types.size > 0 %}
+  <nav class="sidebar-module">
+    <div class="section-header">
+      <p class="section-header__title h4">{{ 'layout.sidebar.shop_by_type' | t }}</p>
+    </div>
+    <ul class="sidebar-module__list">
+      {% for type in shop.types %}
+        <li {% if forloop.index > 8 %} class="sidebar-module__hidden-item"{% endif %}>{{ type | link_to_type }}</li>
+
+        {% if forloop.index > 8 %}
+          {% assign viewmoreTypes = true %}
+        {% endif %}
+      {% endfor %}
+    </ul>
+
+    {% if viewmoreTypes %}
       <button class="text-link sidebar-module__viewmore">
         <span class="sidebar-module__expand">{{ 'layout.sidebar.view_more' | t }}</span>
         <span class="sidebar-module__collapse">{{ 'layout.sidebar.view_less' | t }}</span>
