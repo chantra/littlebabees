@@ -3,13 +3,14 @@
 {% comment %}
   Blank state
 {% endcomment %}
+{% comment %}
 {% if linklists[settings.sidebar_linklist_1].links.size == 0 %}
   <div class="section-header">
     <p class="section-header__title h4">{{ 'layout.sidebar_onboarding.shop_by_collection' | t }}</p>
   </div>
   {{ 'layout.sidebar_onboarding.shop_by_collection_description_html' | t }}
 {% endif %}
-
+{% endcomment %}
 {% if settings.sidebar_linklist_1.title != "" and linklists[settings.sidebar_linklist_1].links.size > 0 %}
   <nav class="sidebar-module">
     <div class="section-header">
