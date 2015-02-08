@@ -60,12 +60,12 @@
   <header class="site-header" role="banner">
     <div class="wrapper">
 
-      <div class="grid--full large--display-table">
-        <div class="grid__item large--one-third large--display-table-cell">
+      <div class="grid">
+        <div class="grid__item">
           {% if template == 'index' %}
-            <h1 class="site-header__logo large--left" itemscope itemtype="http://schema.org/Organization">
+            <h1 class="site-header__logo large" itemscope itemtype="http://schema.org/Organization">
           {% else %}
-            <div class="h1 site-header__logo large--left" itemscope itemtype="http://schema.org/Organization">
+            <div class="h1 site-header__logo large" itemscope itemtype="http://schema.org/Organization">
           {% endif %}
             {% if settings.logo_use_image %}
               <a href="/" itemprop="url">
@@ -85,7 +85,9 @@
             </p>
           {% endif %}
         </div>
-        <div class="grid__item large--two-thirds large--display-table-cell medium-down--hide">
+      </div>
+      <div class="grid medium-down--hide">
+        <div class="grid__item">
           {% include 'site-nav' %}
         </div>
       </div>
