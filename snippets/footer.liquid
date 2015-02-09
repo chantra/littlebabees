@@ -20,6 +20,24 @@
       {% if settings.footer_newsletter_enable %}
         {% assign num_footer_columns = num_footer_columns | plus: 1 %}
       {% endif %}
+      {% if settings.footer_1 %}
+        {% assign num_footer_columns = num_footer_columns | plus: 1 %}
+      {% endif %}
+      {% if settings.footer_2 %}
+        {% assign num_footer_columns = num_footer_columns | plus: 1 %}
+      {% endif %}
+      {% if settings.footer_3 %}
+        {% assign num_footer_columns = num_footer_columns | plus: 1 %}
+      {% endif %}
+      {% if settings.footer_4 %}
+        {% assign num_footer_columns = num_footer_columns | plus: 1 %}
+      {% endif %}
+      {% if settings.footer_5 %}
+        {% assign num_footer_columns = num_footer_columns | plus: 1 %}
+      {% endif %}
+      {% if settings.footer_6 %}
+        {% assign num_footer_columns = num_footer_columns | plus: 1 %}
+      {% endif %}
 
       {% case num_footer_columns %}
         {% when 0 %}
@@ -31,6 +49,18 @@
           {% assign footer_column_width = 'large--one-third medium--one-third' %}
         {% when 4 %}
           {% assign footer_column_width = 'large--one-quarter medium--one-half' %}
+        {% when 5 %}
+          {% assign footer_column_width = 'large--one-fifth medium--one-half' %}
+        {% when 6 %}
+          {% assign footer_column_width = 'large--one-sixth medium--one-half' %}
+        {% when 7 %}
+          {% assign footer_column_width = 'large--one-eighth medium--one-half' %}
+        {% when 8 %}
+          {% assign footer_column_width = 'large--one-eighth medium--one-half' %}
+        {% when 9 %}
+          {% assign footer_column_width = 'large--one-tenth medium--one-half' %}
+        {% when 10 %}
+          {% assign footer_column_width = 'large--one-tenth medium--one-half' %}
       {% endcase %}
 
       {% if settings.footer_quicklinks_enable %}
@@ -43,6 +73,73 @@
           </ul>
         </div>
       {% endif %}
+
+      {% if settings.footer_1 %}
+        <div class="grid__item {{ footer_column_width }}">
+          <h4>{{ linklists[settings.footer_1_linklist].title }}</h4>
+          <ul class="site-footer__links">
+            {% for link in linklists[settings.footer_1_linklist].links %}
+              <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+
+      {% if settings.footer_2 %}
+        <div class="grid__item {{ footer_column_width }}">
+          <h4>{{ linklists[settings.footer_2_linklist].title }}</h4>
+          <ul class="site-footer__links">
+            {% for link in linklists[settings.footer_2_linklist].links %}
+              <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+
+      {% if settings.footer_3 %}
+        <div class="grid__item {{ footer_column_width }}">
+          <h4>{{ linklists[settings.footer_3_linklist].title }}</h4>
+          <ul class="site-footer__links">
+            {% for link in linklists[settings.footer_3_linklist].links %}
+              <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+
+      {% if settings.footer_4 %}
+        <div class="grid__item {{ footer_column_width }}">
+          <h4>{{ linklists[settings.footer_4_linklist].title }}</h4>
+          <ul class="site-footer__links">
+            {% for link in linklists[settings.footer_4_linklist].links %}
+              <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+
+      {% if settings.footer_5 %}
+        <div class="grid__item {{ footer_column_width }}">
+          <h4>{{ linklists[settings.footer_5_linklist].title }}</h4>
+          <ul class="site-footer__links">
+            {% for link in linklists[settings.footer_5_linklist].links %}
+              <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+
+      {% if settings.footer_6 %}
+        <div class="grid__item {{ footer_column_width }}">
+          <h4>{{ linklists[settings.footer_6_linklist].title }}</h4>
+          <ul class="site-footer__links">
+            {% for link in linklists[settings.footer_6_linklist].links %}
+              <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+
 
       {% if settings.footer_social_enable %}
         <div class="grid__item {{ footer_column_width }}">
